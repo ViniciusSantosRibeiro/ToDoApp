@@ -1,5 +1,8 @@
 body{
   background-color: #cc6b2c;
+  text-align: center;
+  display: grid;
+  place-items: center;
 }
 
 
@@ -7,6 +10,7 @@ body{
   display: flex;
   flex-direction: column;
   text-align: center;
+  margin: auto;
 }
 
 .button{
@@ -19,7 +23,6 @@ body{
 
 .button:hover{
   transition: all 0.2s ease-in-out;
-  
 }
 
 .button .completed{

@@ -15,28 +15,28 @@ function App() {
 
   function addItem(event, index) {
     if(newTask.length >= 3){
-      if(description.length <= 3){
-        alert('Creating a task with no description!');
-      }
-      setTasks([...tasks, {taskTitle: newTask, taskDescription: description || 'No descriptions'}]);
+      setTasks([...tasks, {taskTitle: newTask, taskDescription: description || 'No description'}]);
       setNewTask('');
     }else{
-      alert('Coloque um título para sua tarefa!');
+      alert('[ERROR] No task title!')
     }
   }
 
   return (
     <div className="App" style={{height: 'auto', width:'100%', margin: 'auto', color: 'white'}}>
       <br></br>
-      <h1>To Do</h1>
-      <p>Organize, prioritize, and accomplish more!</p>
 
+      <div style={{margin: 'auto', textAlign: 'center'}}>
+        <h1>To Do</h1>
+        <p>Organize, prioritize, and accomplish more!</p>
+      </div>
+      
       <br></br>
 
       <div className='content' style={{display: 'flex', margin: 'auto', textAlign: 'center'}}>
         <input className='inputTask' style={{height: '40px', width: '150px'}} type="text" placeholder="Task Title..." value={newTask} onChange={(e) => setNewTask(e.target.value)}/>
         <input className='inputTask' style={{height: '40px', width: '250px'}} type="text" placeholder="Task Description..." value={description} onChange={(e) => setTaskDescription(e.target.value)}/>
-        <button className='buttonTask' style={{margin: '0 5px', height: '40px', width: '40px', backgroundColor: 'white', border: 'none', borderRadius: '50px'}} onClick={addItem}><Icon style={{margin: ' 0 0 0'}} path={mdiPlusThick} size={1.2}></Icon></button>
+        <button type='submit' className='buttonTask' style={{margin: '0 5px', height: '40px', width: '40px', backgroundColor: 'white', border: 'none', borderRadius: '50px'}} onClick={addItem}><Icon style={{margin: '5px 0 0 0'}} path={mdiPlusThick} size={1.2}></Icon></button>
       </div>
 
       <br></br>
