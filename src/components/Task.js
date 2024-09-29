@@ -15,7 +15,7 @@ function Task({taskTitle, taskDescription}){
     const hours = date.getHours();
 
 		function deleteTask(index){
-			
+			return
 		}
 
     function completedTask(){
