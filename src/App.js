@@ -19,7 +19,12 @@ function App() {
 
   function addItem(event, index) {
     if(newTask.length >= 3){
-      setTasks([...tasks, {taskTitle: newTask, taskDescription: description || 'No description', taskDate: deadlineDates.length >= 1 || formattedDate}]);
+      if(deadlineDates.length >= 1){
+        setTasks([...tasks, {taskTitle: newTask, taskDescription: description || 'No description', taskDate: deadlineDates}]);
+      }else{
+        setTasks([...tasks, {taskTitle: newTask, taskDescription: description || 'No description', taskDate: formattedDate}]);
+      }
+      
 
       setDateTime('');
       setNewTask('');

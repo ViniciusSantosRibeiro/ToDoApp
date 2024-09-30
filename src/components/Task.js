@@ -14,7 +14,6 @@ function Task({taskTitle, taskDescription, taskDate}){
 
     function completedTask(){
       setCompleted(!completed);
-      console.log(completed);
     }
     
     return(
