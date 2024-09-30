@@ -1,8 +1,14 @@
 body{
-  background-color: #cc6b2c;
+  background-color: #204ea4;
   text-align: center;
   display: grid;
   place-items: center;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar{
+  display: none;
 }
 
 
@@ -40,4 +46,14 @@ body{
   text-align: center; 
   color: black;
   background-color: white;
+}
+
+.divTasks{
+  grid-template-columns: 1fr;
+}
+
+@media(min-width: 768px){
+  .divTasks{
+    grid-template-columns: 1fr 1fr;
+  }
 }
