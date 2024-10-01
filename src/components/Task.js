@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Icon from '@mdi/react';
-import { mdiDelete } from '@mdi/js';
+import { mdiDelete, mdiCheckBold } from '@mdi/js';
 import 'animate.css';
 
 function Task({taskTitle, taskDescription, taskDate}){
@@ -30,8 +30,8 @@ function Task({taskTitle, taskDescription, taskDate}){
               </div>
 
               <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '5px', flexGrow: 2 }}>
-                <button className='button completed ' onClick={() => completedTask} onMouseEnter={(e) => {e.target.style.transform = 'scale(1.2)';}} onMouseLeave={(e) => {e.target.style.transform = 'scale(1)';}}>Concluída</button>
-                <button className='button recicle' onClick={() => deleteTask} onMouseEnter={(e) => {e.target.style.transform = 'scale(1.2)';}} onMouseLeave={(e) => {e.target.style.transform = 'scale(1)';}}><Icon path={mdiDelete} size={1}></Icon></button> 
+                <button className='button completed ' onClick={() => completedTask} onMouseEnter={(e) => {e.target.style.transform = 'scale(1.2)';}} onMouseLeave={(e) => {e.target.style.transform = 'scale(1)';}}><Icon style={{margin: '0 0 0 0'}} path={mdiCheckBold} size={1.2}></Icon></button>
+                <button className='button recicle' onClick={() => deleteTask} onMouseEnter={(e) => {e.target.style.transform = 'scale(1.2)';}} onMouseLeave={(e) => {e.target.style.transform = 'scale(1)';}}><Icon style={{margin: '3px 0 0 0'}} path={mdiDelete} size={1}></Icon></button> 
               </div>
             </div>
 

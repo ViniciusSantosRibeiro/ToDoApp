@@ -53,7 +53,7 @@ function App() {
         <button type='submit' className='buttonTask' style={{margin: '0 5px', backgroundColor: 'white', border: 'none', borderRadius: '50px'}} onClick={addItem}><Icon style={{margin: '5px 0 0 0'}} path={mdiPlusThick} size={1.2}></Icon></button>
       </div>
 
-      <br></br>
+      <br></br><br></br>
 
       <div className='divTasks' style={{display: 'grid', justifyContent: 'center', columnGap: '20px' , rowGap: '20px', margin: '0 auto'}}>
         {tasks.map((task) => <Task taskTitle={task.taskTitle} taskDescription={task.taskDescription} taskDate={task.taskDate}></Task>)}  

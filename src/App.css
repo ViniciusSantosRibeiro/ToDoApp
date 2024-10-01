@@ -31,12 +31,18 @@ body{
   transition: all 0.2s ease-in-out;
 }
 
-.button .completed{
-  background-color: green;
+.completed{
+  background-color: rgb(78, 255, 78);
+  border-radius: 100px;
+  width: 50px;
+  height: 40px;
 }
 
-.button .recicle{
-  background-color: red;
+.recicle{
+  background-color: rgb(255, 54, 54);
+  border-radius: 100px;
+  width: 50px; 
+  height: 40px;
 }
 
 .inputTask{
@@ -61,6 +67,8 @@ body{
   margin: 0 auto;
   width: 250px;
   height: 40px;
+  color: black;
+  background-color: none;
 }
 
 .buttonTask{
