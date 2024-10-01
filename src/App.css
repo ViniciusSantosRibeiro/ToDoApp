@@ -52,8 +52,57 @@ body{
   grid-template-columns: 1fr;
 }
 
+.taskTitle{
+  width: 250px;
+}
+
+.taskDate{
+  text-align: center;
+  margin: 0 auto;
+  width: 250px;
+  height: 40px;
+}
+
+.buttonTask{
+  width: 250px;
+  height: 50px;
+}
+
+.content{
+  flex-direction: column;
+  justify-content: center;
+}
+
 @media(min-width: 768px){
   .divTasks{
     grid-template-columns: 1fr 1fr;
   }
+
+  .content{
+    flex-direction: row;
+  }
+
+  .taskTitle{
+    width: 150px;
+  }
+
+  .buttonTask{
+    width: 40px;
+  }
+  
+  
+  .taskTitle{
+    width: 180px;
+  }
+
+  .taskDate{
+    width: 130px;
+    height: 40px;
+  }
+
+  .buttonTask{
+    width: 40px;
+    height: 40px;
+  }
+  
 }

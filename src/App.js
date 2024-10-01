@@ -46,11 +46,11 @@ function App() {
       
       <br></br>
 
-      <div className='content' style={{display: 'flex', margin: 'auto', textAlign: 'center'}}>
-        <input className='inputTask' style={{height: '40px', width: '150px'}} type="text" placeholder="Task Title..." value={newTask} onChange={(e) => setNewTask(e.target.value)}/>
-        <input className='inputTask' style={{height: '40px', width: '250px'}} type="text" placeholder="Task Description..." value={description} onChange={(e) => setTaskDescription(e.target.value)}/>
-        <input className='inputTask' type='date' value={deadlineDates} onChange={(e) => setDateTime(e.target.value)}></input>
-        <button type='submit' className='buttonTask' style={{margin: '0 5px', height: '40px', width: '40px', backgroundColor: 'white', border: 'none', borderRadius: '50px'}} onClick={addItem}><Icon style={{margin: '5px 0 0 0'}} path={mdiPlusThick} size={1.2}></Icon></button>
+      <div className='content' style={{display: 'flex', columnGap: '10px', rowGap: '20px', margin: '0 auto', textAlign: 'center'}}>
+        <input className='inputTask taskTitle' style={{height: '40px'}} type="text" placeholder="Task Title..." value={newTask} onChange={(e) => setNewTask(e.target.value)}/>
+        <input className='inputTask taskDescription' style={{height: '40px', width: '250px'}} type="text" placeholder="Task Description..." value={description} onChange={(e) => setTaskDescription(e.target.value)}/>
+        <input className='inputTask taskDate' type='date' placeholder='dd/mm/aaaa' value={deadlineDates} onChange={(e) => setDateTime(e.target.value)}></input>
+        <button type='submit' className='buttonTask' style={{margin: '0 5px', backgroundColor: 'white', border: 'none', borderRadius: '50px'}} onClick={addItem}><Icon style={{margin: '5px 0 0 0'}} path={mdiPlusThick} size={1.2}></Icon></button>
       </div>
 
       <br></br>

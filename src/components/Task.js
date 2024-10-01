@@ -36,7 +36,7 @@ function Task({taskTitle, taskDescription, taskDate}){
             </div>
 
             <div style={{textAlign: 'center', display: 'flex', flexDirection: 'row', margin:'0 auto', flexGrow: 2, flexWrap: 2}}>
-              <input type='date' value={taskDate} style={{textAlign: 'center', width: '110px', border: 'none'}}/>
+              <input type='date' disabled value={taskDate} style={{textAlign: 'center', width: '110px', border: 'none'}}/>
             </div>
           </div>
       </div>
