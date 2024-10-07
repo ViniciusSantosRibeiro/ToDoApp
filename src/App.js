@@ -17,14 +17,25 @@ function App() {
   const formattedDate = currentDate.toISOString().split('T')[0];
   const [deadlineDates, setDateTime] = useState([]);
 
-  function addItem(event, index) {
-    if(newTask.length >= 3){
-      if(deadlineDates.length >= 1){
-        setTasks([...tasks, {taskTitle: newTask, taskDescription: description || 'No description', taskDate: deadlineDates}]);
-      }else{
-        setTasks([...tasks, {taskTitle: newTask, taskDescription: description || 'No description', taskDate: formattedDate}]);
-      }
+  const [taskID, setID] = useState(100);
+
+  var min = 100;
+  var max = 999;
+
+  function deleteTask(id){
+    const updateTasks = tasks.filter(task => task.taskID !== id);
+    setTasks(updateTasks); 
+  }
+
+  function addItem() {
+    if(newTask.length > 0){
+      setID(Math.round(min + Math.random() * (max - min)));
       
+      if(deadlineDates.length > 0){
+        setTasks([...tasks, {taskID: taskID, taskTitle: newTask, taskDescription: description || 'No description', taskDate: deadlineDates}]);
+      }else{
+        setTasks([...tasks, {taskID: taskID, taskTitle: newTask, taskDescription: description || 'No description', taskDate: formattedDate}]);
+      };
 
       setDateTime('');
       setNewTask('');
@@ -56,10 +67,9 @@ function App() {
       <br></br><br></br>
 
       <div className='divTasks' style={{display: 'grid', justifyContent: 'center', columnGap: '20px' , rowGap: '20px', margin: '0 auto'}}>
-        {tasks.map((task) => <Task taskTitle={task.taskTitle} taskDescription={task.taskDescription} taskDate={task.taskDate}></Task>)}  
+        {tasks.map((task) => <Task key={task.taskID} deleteTask={deleteTask} taskID={task.taskID} taskTitle={task.taskTitle} taskDescription={task.taskDescription} taskDate={task.taskDate}></Task>)}  
       </div>
       
-
     </div>
   );
 }
