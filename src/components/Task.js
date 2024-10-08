@@ -9,14 +9,22 @@ function Task({taskID, taskTitle, taskDescription, taskDate, deleteTask}){
 
     const [bgColor, setBgColor] = useState('white');
 
+    const fadeInAnimation = 'animate__bounceIn';
+    const fadeOutAnimation = 'animate__bounceOut';
+    let currentAnimation = fadeInAnimation;
+
     function completedTask(){
       setCompleted(!completed);
-      const newColor = completed ? 'white' : '#009874';
+      const newColor = completed ? 'white' : 'rgb(78, 255, 78)';
       setBgColor(newColor);
+    }
+
+    function animDelete(){
+      currentAnimation = fadeOutAnimation;
     }
     
     return(
-        <div className='animate__bounceIn' style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
+        <div className={currentAnimation} style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
           <div className='taskContent' style={{height: '100%', width: '350px', margin: '0px 0', textAlign: 'center', backgroundColor: bgColor, color: 'black', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '10px', borderRadius: '5px', boxShadow: '0 2px 5px rgba(0, 0, 0, 0.2)', transition: 'all 0.5s ease-in-out'}} onMouseEnter={(e) => {e.target.style.transform = 'scale(1.0)';}} onMouseLeave={(e) => {e.target.style.transform = 'scale(1)';}}>
 						 
             <div style={{ justifyContent: 'center', marginBottom: '0.5em'}}>
@@ -30,7 +38,7 @@ function Task({taskID, taskTitle, taskDescription, taskDate, deleteTask}){
 
               <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '5px', flexGrow: 2 }}>
                 <button className='button completed ' onClick={completedTask}><Icon style={{margin: '0 0 0 0'}} path={mdiCheckBold} size={1.2}></Icon></button>
-                <button className='button recicle' onClick={() => deleteTask(taskID)}><Icon style={{margin: '3px 0 0 0'}} path={mdiDelete} size={1}></Icon></button> 
+                <button className='button recicle' onClick={() => deleteTask(taskID) && animDelete}><Icon style={{margin: '3px 0 0 0'}} path={mdiDelete} size={1}></Icon></button> 
               </div>
             </div>
 

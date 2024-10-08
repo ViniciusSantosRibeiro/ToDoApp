@@ -24,10 +24,12 @@ body{
   height: 30px; 
   border: none;
   box-shadow: none;
+  padding: 4px;
   transition: all 0.2s ease-in-out;
 }
 
 .button:hover{
+  transform: scale(1.2);
   transition: all 0.2s ease-in-out;
 }
 
